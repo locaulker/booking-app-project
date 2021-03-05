@@ -1,8 +1,7 @@
 // import
 import { createContext, useReducer } from "react"
-import firebase from "../firebase"
 
-// reducer funtion
+// reducer function
 const reducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
@@ -16,12 +15,19 @@ const reducer = (state, action) => {
 
 // initial state
 const initialState = {
-  user: null
+  user: null,
 }
 
-// create context to generate 'Provider' and 'Consumer'
+// create Context to generate 'Provider' and 'Consumer'
 const Context = createContext({})
 
+// Provider
 const Provider = ({ children }) => {
-  //
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const value = { state, dispatch }
+  return <Context.Provider value={value}>{children}</Context.Provider>
 }
+
+// export both 'Context' and 'Provider' variables
+export { Context, Provider }
