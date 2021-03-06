@@ -8,7 +8,7 @@ var firebaseConfig = {
   projectId: "booking-app-project-42e4d",
   storageBucket: "booking-app-project-42e4d.appspot.com",
   messagingSenderId: "537691472069",
-  appId: "1:537691472069:web:c021aaaded1a74793c30ac"
+  appId: "1:537691472069:web:c021aaaded1a74793c30ac",
 }
 // Initialize Firebase
 if (!firebase.apps.length) {
